@@ -1,9 +1,5 @@
-<div style="text-align: center">
-
-  ![logo](./src/assets/logo.jpg)
-  # **Peachtree Bank**
-
-</div>
+![logo](./src/assets/logo.jpg)
+# **Peachtree Bank**
 
 ## Table of Contents
 
