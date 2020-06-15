@@ -12,7 +12,6 @@
   background-size: cover;
 }
 
-// style
 .app-header {
   background-color: white;
   font-size: 200%;
@@ -27,12 +26,10 @@
   width: 300px;
 }
 
-// layout
 .app-wrapper {
   padding-top: 80px;
 }
 
-// style
 .card {
   padding: 0;
   border-radius: 0;
@@ -40,7 +37,6 @@
   margin-bottom: 51px;
 }
 
-// style
 .card-header {
   background-color: $primary;
   height: 55px;
@@ -64,12 +60,12 @@
   opacity: .6;
 }
 
-// style
 .card-content-wrapper {
   padding: 16px;
 }
 
 // media queries
+
 @media screen and (max-width:991px) {
   .app-header {
     justify-content: center;
