@@ -1,0 +1,81 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f, f.value)">
+
+  <!-- form -->
+
+  <div *ngIf="showForm">
+    <span class="input-label">
+      From Account
+    </span>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Free Checking(4692) - {{ fromAccountAmount | currency }}"
+        disabled
+      >
+    </mat-form-field>
+    <span class="deficit-warning" *ngIf="deficit">
+      Insufficient funds
+    </span>
+
+    <span class="input-label">
+      To Account
+    </span>
+    <mat-form-field>
+      <input
+        matInput
+        name="toAccount"
+        placeholder="Georgia Power Electric Company"
+        ngModel
+      >
+    </mat-form-field>
+
+    <span class="input-label">
+      Amount
+    </span>
+    <mat-form-field>
+      <input
+        matInput
+        name="amount"
+        placeholder="$0.00"
+        ngModel
+      >
+    </mat-form-field>
+
+    <div class="align-button">
+      <button mat-button class="submit-button" type="submit" [disabled]="deficit">
+        Submit
+      </button>
+    </div>
+  </div>
+
+  <!-- confirm -->
+
+  <div *ngIf="!showForm">
+    <p class="input-label">
+      From Account
+    </p>
+    <p class="confirm-text">
+      Free Checking(4692) - {{ fromAccountAmount | currency }}
+    </p>
+
+    <p class="input-label">
+      To Account
+    </p>
+    <p class="confirm-text">
+      {{ newTransaction.merchant }}
+    </p>
+
+    <p class="input-label">
+      Amount
+    </p>
+    <p class="confirm-text">
+      {{ newTransaction.amount | currency }}
+    </p>
+
+    <div class="align-button">
+      <button mat-button class="submit-button" (click)="onTransfer()">
+        Transfer
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,100 @@
+// bootstrap
+@import "~bootstrap/dist/css/bootstrap.css";
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+// style variables
+@import "./app.variables.scss";
+
+// $primary: #008DA1;
+// $secondary: #FF7033;
+// $green: #00C383;
+// $pink: #E4005F;
+// $red: #D80018;
+// $yellow: #D8B100;
+// $blue: #0091D8;
+
+// $list-colors: $green, $pink, $red, $yellow, $secondary, $blue;
+
+// $colors: #00C383, #E4005F, #D80018, #D8B100, #FF7033, #0091D8;
+
+.app {
+  background: url('../assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+// style
+.app-header {
+  background-color: white;
+  font-size: 200%;
+  border: {
+    top: 1px solid $secondary;
+    bottom: 1px solid $secondary;
+  }
+}
+
+.logo {
+  margin-left: 60px;
+  width: 300px;
+}
+
+// layout
+.app-wrapper {
+  padding-top: 80px;
+}
+
+// style
+.card {
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  margin-bottom: 51px;
+}
+
+// style
+.card-header {
+  background-color: $primary;
+  height: 55px;
+}
+
+.card-header:first-child {
+  border-radius: 0;
+}
+
+.center-title {
+  margin: auto;
+}
+
+.card-title {
+  color: white;
+  font-family: $font
+}
+
+.icon {
+  width: 30px;
+  opacity: .6;
+}
+
+// style
+.card-content-wrapper {
+  padding: 16px;
+}
+
+// media queries
+@media screen and (max-width:991px) {
+  .app-header {
+    justify-content: center;
+  }
+
+  .logo {
+    margin-left: 0px;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+
+

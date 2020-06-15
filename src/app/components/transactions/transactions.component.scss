@@ -1,0 +1,134 @@
+// style variables
+@import "../../app.variables.scss";
+
+.search-bar {
+  display: flex;
+}
+
+.text-style {
+  font-weight: bold;
+  font-family: $font;
+}
+
+.button-style {
+  text-transform: uppercase;
+  font-family: $font;
+}
+
+.sort {
+  font-size: 14px;
+  margin-right: 15px;
+}
+
+.search-input, .search-buttons {
+  width: 50%;
+  text-align: right;
+}
+
+.mat-form-field {
+  width: 100%;
+  font-family: $font;
+}
+
+.transactions-container {
+  height: 500px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  border-top: solid 1px grey;
+}
+
+.transactions-container::-webkit-scrollbar {
+  display: none;
+}
+
+.mat-list-base {
+  padding-top: 0;
+}
+
+.transaction-item {
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+  border: {
+    bottom: solid 1px grey;
+    right: solid 1px grey;
+  }
+  font-family: $font;
+  display: flex;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  height: 70px;
+}
+
+.date,
+.image {
+  margin-right: 30px;
+  filter: grayscale(100%);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.amount {
+  flex-grow: 1;
+  text-align: right;
+}
+
+@for $i from 1 through length($list-colors) {
+  mat-list-item:nth-child(#{length($list-colors)}n+#{$i}) {
+      border-left: solid 7px nth($list-colors, $i)
+  }
+}
+
+.no-results {
+  display: block;
+  color: $red;
+  font-family: $font;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+// media queries ---
+
+@media screen and (max-width:1199px) {
+
+  .search-input {
+    width: 40%;
+  }
+
+  .search-buttons {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .search-input {
+    width: 45%;
+  }
+
+  .search-buttons {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-input, .search-buttons {
+    width: 100%;
+  }
+
+  .search-buttons {
+    padding-bottom: 20px;
+  }
+}
+
+
+

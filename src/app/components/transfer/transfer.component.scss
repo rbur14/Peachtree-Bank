@@ -1,0 +1,40 @@
+// style variables
+@import "../../app.variables.scss";
+
+mat-form-field {
+  width: 100%;
+  font-family: $font;
+ }
+
+.input-label {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $font;
+}
+
+.confirm-text {
+  color: $secondary;
+  font-family: $font;
+}
+
+.align-button {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.submit-button {
+  background-color: $secondary;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $font;
+  width: 60%;
+}
+
+.deficit-warning {
+  display: block;
+  color: $red;
+  font-family: $font;
+  text-align: right;
+  font-size: 14px;
+}

@@ -1,0 +1,75 @@
+<div class="search-bar">
+
+  <!-- search bar -->
+
+  <div class="search-input">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Search by typing..."
+        [formControl]="transactionSearchForm"
+      >
+    </mat-form-field>
+  </div>
+  <div class="search-buttons">
+    <span class="sort text-style">
+      Sort by
+    </span>
+
+    <!-- search buttons -->
+
+    <mat-button-toggle-group>
+      <mat-button-toggle  value="Date" (click)="sortTransactions('transactionDate')">
+        <span class="button-style">
+          Date
+        </span>
+      </mat-button-toggle>
+      <mat-button-toggle  value="Beneficiary" (click)="sortTransactions('merchant')">
+        <span class="button-style">
+          Beneficiary
+        </span>
+      </mat-button-toggle>
+      <mat-button-toggle  value="Amount" (click)="sortTransactions('amount')">
+        <span class="button-style">
+          Amount
+        </span>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
+
+<!-- transactions list -->
+
+<div class="transactions-container">
+  <span class="no-results" *ngIf="noResults">
+    No results
+  </span>
+  <mat-list>
+    <mat-list-item class="transaction-item" *ngFor="let transaction of transactions | filter: searchTerm">
+      <div class="date">
+        <span>
+          {{ transaction.transactionDate | date:'MMM. dd' }}
+        </span>
+      </div>
+      <div class="image">
+        <img width="50px" src={{transaction.merchantLogo}}>
+      </div>
+      <div class="info">
+        <span class="merchant text-style">
+          {{ transaction.merchant }}
+        </span>
+        <span>
+          {{ transaction.transactionType }}
+        </span>
+      </div>
+      <div class="amount text-style">
+        <span>
+          -{{ transaction.amount | currency}}
+        </span>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+
+
