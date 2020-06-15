@@ -11,6 +11,7 @@ import transactionsData from '../../data/transactions.json';
 })
 export class TransactionsComponent implements OnInit {
 
+  // variables
   transactions: any[] = transactionsData.data;
   transactionSearchForm = new FormControl('');
   searchTerm: string;
@@ -18,7 +19,8 @@ export class TransactionsComponent implements OnInit {
 
   showNoResuls() {
     let listItem = document.getElementsByTagName('mat-list-item');
-    if (listItem.length < 3) {
+    // check for list items
+    if (listItem.length < 1) {
       this.noResults = true;
     }
     else {
@@ -30,6 +32,7 @@ export class TransactionsComponent implements OnInit {
     let numAmount: number;
     let propA: any;
     let propB: any;
+    // convert object 'amount' property to number and sort numerically
     if (property === 'amount') {
       for (let i=0; i < this.transactions.length; i++) {
         numAmount = parseFloat(this.transactions[i].amount);
@@ -41,6 +44,7 @@ export class TransactionsComponent implements OnInit {
         return (propA-propB)*-1;
       });
     }
+    // sort alphabetically
     else {
       this.transactions.sort(function(a, b) {
         propA = a[property];
@@ -53,6 +57,7 @@ export class TransactionsComponent implements OnInit {
   }
 
   searchTransactions() {
+    // take in and update search input value
     this.transactionSearchForm.valueChanges.subscribe(searchTermInput => {
       this.showNoResuls();
       this.searchTerm = searchTermInput;
